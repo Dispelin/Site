@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Анимация профиля
     const profile = document.querySelector('.profile-panel');
     const links = document.querySelectorAll('.social-link');
     
@@ -21,4 +22,24 @@ document.addEventListener('DOMContentLoaded', function() {
             link.style.transform = 'translateY(0)';
         }, 500 + index * 100);
     });
+
+    // Функция загрузки котика
+    const catImg = document.getElementById('random-cat');
+
+    async function fetchRandomCat() {
+        try {
+            const response = await fetch('https://api.thecatapi.com/v1/images/search');
+            const data = await response.json();
+            catImg.src = data[0].url;
+        } catch (error) {
+            console.error('Ошибка загрузки:', error);
+            catImg.alt = 'Ошибка загрузки котика';
+        }
+    }
+
+    // Загружаем котика при загрузке страницы
+    fetchRandomCat();
+    
+    // Обновляем котика каждые 10 секунд
+    setInterval(fetchRandomCat, 10000);
 });

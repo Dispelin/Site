@@ -68,6 +68,30 @@ p {
     justify-content: center;
     gap: 25px;
     backdrop-filter: blur(5px);
+    border-radius: 0 0 15px 15px;
+    margin-top: -15px;
+    position: relative;
+    z-index: 1;
+}
+
+.random-cat {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+#random-cat {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
 }
 
 .social-icon {
@@ -89,5 +113,17 @@ p {
     
     .social-links {
         gap: 15px;
+    }
+    
+    .random-cat {
+        position: static;
+        margin-top: 20px;
+        width: 90%;
+        max-width: 200px;
+    }
+    
+    #random-cat {
+        width: 100%;
+        height: auto;
     }
 }
