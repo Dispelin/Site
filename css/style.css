@@ -87,6 +87,7 @@ p {
     z-index: 10;
 }
 
+
 #random-cat {
     width: 150px;
     height: 150px;
@@ -105,25 +106,35 @@ p {
     filter: brightness(0.8) sepia(1) hue-rotate(180deg) saturate(5);
 }
 
-@media (max-width: 600px) {
-    .profile-panel {
-        margin: 30px 15px;
-        padding: 20px;
-    }
-    
-    .social-links {
-        gap: 15px;
-    }
-    
+@media (max-width: 768px) {
     .random-cat {
         position: static;
-        margin-top: 20px;
+        transform: none;
+        margin: 20px auto 0;
         width: 90%;
         max-width: 200px;
+        order: 1; /* Добавлено для flex-порядка */
     }
     
     #random-cat {
         width: 100%;
         height: auto;
+    }
+    
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 20px;
+    }
+    
+    .profile-panel {
+        order: -1; /* Профиль сверху */
+    }
+    
+    .social-links {
+        order: 0; /* Ссылки посередине */
+        margin-top: 0;
+        border-radius: 0 0 15px 15px;
     }
 }
