@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-image: url('../assets/images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.profile-panel {
+    background-color: rgba(0, 0, 0, 0.7);
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+
+.social-links {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    backdrop-filter: blur(5px);
+}
+
+.social-icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.social-link:hover .social-icon {
+    transform: translateY(-5px);
+    filter: brightness(0.8) sepia(1) hue-rotate(180deg) saturate(5);
+}
+
+@media (max-width: 600px) {
+    .profile-panel {
+        margin: 30px 15px;
+        padding: 20px;
+    }
+    
+    .social-links {
+        gap: 15px;
+    }
+}

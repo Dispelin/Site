@@ -3,144 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мой персональный сайт</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
-        
-        body {
-            background-image: url('https://images.unsplash.com/photo-1499002238440-d264edd596ec'); /* Замените на свой фон */
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            color: white;
-        }
-        
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: -1;
-        }
-        
-        .profile-panel {
-            background-color: rgba(0, 0, 0, 0.7);
-            max-width: 500px;
-            margin: 50px auto;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            backdrop-filter: blur(5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-        }
-        
-        .avatar {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid white;
-            margin-bottom: 20px;
-        }
-        
-        h1 {
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-        
-        p {
-            font-size: 16px;
-            opacity: 0.8;
-            margin-bottom: 20px;
-        }
-        
-        .social-links {
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            backdrop-filter: blur(5px);
-        }
-        
-        .social-link {
-            color: white;
-            font-size: 24px;
-            transition: transform 0.3s, color 0.3s;
-            text-decoration: none;
-        }
-        
-        .social-link:hover {
-            transform: translateY(-5px);
-            color: #1DA1F2; /* Цвет при наведении */
-        }
-        
-        @media (max-width: 600px) {
-            .profile-panel {
-                margin: 30px 15px;
-                padding: 20px;
-            }
-            
-            .social-links {
-                gap: 15px;
-            }
-        }
-    </style>
+    <title>Крутое bio</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="overlay"></div>
     
     <div class="profile-panel">
-        <img src="https://via.placeholder.com/150" alt="Аватар" class="avatar"> <!-- Замените на свою аватарку -->
-        <h1>Ваше Имя</h1> <!-- Замените на свое имя -->
-        <p>Краткое описание или статус</p> <!-- Опционально -->
+        <img src="assets/images/avatar.jpg" alt="Аватар" class="avatar">
+        <h1>Константин</h1>
+        <p>Пытаюсь говнокодить в 17 лет</p>
     </div>
     
     <div class="social-links">
-        <a href="https://t.me/ваш_телеграм" class="social-link" target="_blank"><i class="fab fa-telegram"></i></a> <!-- Замените ссылку -->
-        <a href="https://t.me/ваш_тгк" class="social-link" target="_blank"><i class="fab fa-telegram-plane"></i></a> <!-- Замените ссылку -->
-        <a href="https://youtube.com/ваш_канал" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a> <!-- Замените ссылку -->
-        <!-- Добавьте другие ссылки при необходимости -->
+        <a href="https://t.me/ваш_телеграм" class="social-link" target="_blank">
+            <img src="assets/icons/telegram.png" alt="Telegram" class="social-icon">
+        </a>
+        <a href="https://t.me/ваш_тгк" class="social-link" target="_blank">
+            <img src="assets/icons/telegram-plane.png" alt="Telegram Channel" class="social-icon">
+        </a>
+        <a href="https://youtube.com/ваш_канал" class="social-link" target="_blank">
+            <img src="assets/icons/youtube.png" alt="YouTube" class="social-icon">
+        </a>
     </div>
     
-    <script>
-        // Можно добавить простые анимации при загрузке
-        document.addEventListener('DOMContentLoaded', function() {
-            const profile = document.querySelector('.profile-panel');
-            const links = document.querySelectorAll('.social-link');
-            
-            profile.style.opacity = '0';
-            profile.style.transform = 'translateY(20px)';
-            profile.style.transition = 'opacity 0.5s, transform 0.5s';
-            
-            setTimeout(() => {
-                profile.style.opacity = '1';
-                profile.style.transform = 'translateY(0)';
-            }, 300);
-            
-            links.forEach((link, index) => {
-                link.style.opacity = '0';
-                link.style.transform = 'translateY(10px)';
-                link.style.transition = `opacity 0.3s ${index * 0.1}s, transform 0.3s ${index * 0.1}s`;
-                
-                setTimeout(() => {
-                    link.style.opacity = '1';
-                    link.style.transform = 'translateY(0)';
-                }, 500 + index * 100);
-            });
-        });
-    </script>
+    <script src="js/script.js"></script>
 </body>
 </html>
